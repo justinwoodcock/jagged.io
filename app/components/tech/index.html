@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="dropdown-wrapper">
+                <input class="tech-typeahead" type="text" ng-model="techFilter" typeahead="tech.title for tech in technologies | limitTo:8" placeholder="Filter out by technology type or name (ie Angular, Javascript, Frontend)" />
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div id="tech-list" class="cards row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies | filter:{tags:techFilter}">
+                    <div class="card {{tech.title|lowercase}}" ng-class="{'flipped':tech.flipped}">
+                        <div class="card-front" ng-click="tech.flipped=true" >
+                            <div class="long-shadow">
+                                <span>  
+                                    <i class="devicons {{tech.icon}}"></i>
+                                </span>
+                            </div>
+                            <h3 class="tech-title">{{tech.title}}</h3>
+                            <a class="btn-icon" href="{{tech.url}}" target="_blank">
+                                <i class="icon-link"></i>
+                            </a>
+                        </div>
+                        <div class="card-back" ng-click="tech.flipped=false" ng-mouseleave="tech.flipped=false">
+                            <p>{{tech.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+#header
+    .navbar
+        height: 72px
+        overflow: hidden
+        background: #156188
+        border: none
+        border-bottom: 1px solid #0f4763
+        border-radius: 0
+    .brand
+        width: 135px
+        height: 120px
+        position: relative
+        top: 14px
+        display: block
+        background: url(../images/logo-jagged-shadow.png) no-repeat
+        text-indent: -9999px
+    .btn-menu, .btn-close
+        top: 17px
+        margin: 0
+        span
+            color: darken(#fff, 10%)
+        &:hover
+            background: rgba(#000, .05)
+            border-color: darken($scolor, 4%)
+            span
+                color: #fff
+                @include long-shadow (darken($scolor, 3%), $length)
+        &:active
+            background: rgba(#000, .1)
+            border-color: darken($scolor, 5%)
+            span
+                color: #fff
+                @include long-shadow (darken($scolor, 5%), $length)
+
+#state-menu
+    #header
+        .navbar
+            background: transparent
+            border-bottom: none
+            overflow: visible
+        .brand
+            background: url(../images/logo-jagged.png) no-repeat
+            width: 53px
+            height: 38px
+        .btn-close
