@@ -20,11 +20,16 @@
 .tech-typeahead
     width: 100%
     padding: 20px
-    color: #fff
+    color: rgba(#fff, 0.85)
+    font-weight: 300
     font-size: 18px
     outline: none
     border: none
     background: transparent
+    @include placeholder
+        color: rgba(#fff, 0.85)
+        //font-weight: 100
+        //letter-spacing: .075em
 .cards
     .card
         position: relative
@@ -66,6 +71,7 @@
             margin: 0 auto 36px auto
         .tech-title
             margin-bottom: 28px
+            font-weight: 500
         &.flipped
             .card-front
                 -webkit-transform: rotateY(180deg)

@@ -2,11 +2,8 @@
 
 jagged.controller('TechController', ['$scope',
     function($scope) {
-        
-        $scope.hideTech = function(index) {
-            console.log($scope.technologies[index])
-        };
 
+        // Temporary data until i get my api stood up
         $scope.technologies = [
             // {
             //     title: 'title',
@@ -243,18 +240,3 @@ jagged.controller('TechController', ['$scope',
         ];
     }
 ]);
-
-// jagged.filter('selectedTags', function() {
-//     return function(technologies, tags) {
-//         return technologies.filter(function(tech) {
-
-//             for (var i in tech.tags) {
-//                 if (tags.indexOf(task.Tags[i]) != -1) {
-//                     return true;
-//                 }
-//             }
-//             return false;
-
-//         });
-//     };
-// });
