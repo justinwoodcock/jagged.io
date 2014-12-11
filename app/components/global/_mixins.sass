@@ -9,3 +9,13 @@
     -moz-border-radius: $bradius
     -ms-border-radius: $bradius
     border-radius: $bradius
+
+@mixin placeholder
+    &::-webkit-input-placeholder
+        @content
+    &:-moz-placeholder
+        @content
+    &::-moz-placeholder
+        @content
+    &:-ms-input-placeholder
+        @content
