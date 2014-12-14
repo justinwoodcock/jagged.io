@@ -1,0 +1,36 @@
+<div id="work" class="container">
+    <div id="project-list" class="cards row">
+        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects | filter:{tags:workFilter}">
+            <div class="card {{project.client|lowercase}}" ng-class="{'flipped':project.flipped}" ng-mouseover="project.interval=2500" ng-mouseout="project.interval=-1">
+                <div class="card-front">
+                    <div class="screenshots carousel">
+                        <carousel interval="project.interval">
+                            <slide ng-if="project.thumbnail">
+                                <img class="img-responsive slide" ng-src="{{project.thumbnail}}" />
+                            </slide>
+                            <slide ng-repeat="screenshot in project.screenshots">
+                                <img class="img-responsive slide" ng-src="{{screenshot}}"/>
+                            </slide>
+                        </carousel>
+                    </div>
+                    <div class="project-icon">
+                        <div class="long-shadow">
+                            <span>  
+                                <i class="{{project.icon}}"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="info" ng-click="project.flipped=true">
+                        <h3 class="project-title">{{project.title}}</h3>
+                        <a class="btn-icon" href="{{project.url}}" target="_blank">
+                            <i class="icon-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-back" ng-click="project.flipped=false" ng-mouseout="project.flipped=false">
+                    <p>{{project.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
