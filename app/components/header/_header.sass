@@ -1,4 +1,9 @@
 #header
+    position: fixed
+    width: 100%
+    left: 0
+    top: 0
+    z-index: 99
     .navbar
         height: 72px
         overflow: hidden
@@ -37,9 +42,15 @@
         .navbar
             background: transparent
             border-bottom: none
-            overflow: visible
+            height: 94px
         .brand
-            background: url(../images/logo-jagged.png) no-repeat
-            width: 53px
-            height: 38px
+            background: url(../images/logo-jagged-shadow.png) #156188 no-repeat 10px 12px
+            border: 2px solid rgba(#114f6f, .8)
+            width: 76px
+            height: 76px
+            overflow: hidden
+            @include border-radius(38px)
+            //width: 53px
+            //height: 38px
         .btn-close
+            // top: 32px

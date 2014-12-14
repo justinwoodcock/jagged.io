@@ -1,9 +1,9 @@
 'use strict';
 
-jagged.controller('JaggedController', ['$scope', '$rootScope',
-    function($scope, $rootScope) {
+jagged.controller('JaggedController', ['$scope', '$rootScope', '$state',
+    function($scope, $rootScope, $state) {
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-            $scope.state = toState;
+            $scope.state = $state;
         });
     }
 ]);

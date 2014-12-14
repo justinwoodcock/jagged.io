@@ -1,7 +1,7 @@
 .dropdown-wrapper
     position: relative
     background: rgba($theme-dark, .85)
-    margin: 10px 0 30px 0
+    margin: 0 0 30px 0
     padding: 0
     color: #fff
     font-size: 18px
@@ -30,67 +30,11 @@
         color: rgba(#fff, 0.85)
         //font-weight: 100
         //letter-spacing: .075em
-.cards
+
+#state-tech
     .card
-        position: relative
-        height: 300px
-        -webkit-perspective: 1000
-        perspective: 1000
-        margin-bottom: 30px
-        .card-front, .card-back
-            border: 1px solid #13597d
-            background: rgba(#fff, .8)
-            @include border-radius(3px)
-            color: $theme-dark
-            -webkit-transform-style: preserve-3d
-            width: 100%
-            height: 100%
-            position: absolute
-            left: 0
-            top: 0
-            transition: top 100ms ease-in, left 100ms ease-in, transform 500ms ease-in-out, width 100ms ease-in, height 100ms ease-in, background 50ms ease-in
-            -webkit-backface-visibility: hidden
-            backface-visibility: hidden
-        .card-front
-            padding: 34px 18px
-            text-align: center
-            -webkit-transform: rotateY(0deg)
-            transform: rotateY(0deg)
-            z-index: 2
-            cursor: default
-        .card-back
-            padding: 20px
-            text-align: left
-            background-color: rgba(255,255,255,.9)
-            -webkit-transform: rotateY(180deg)
-            transform: rotateY(180deg)
-            cursor: default
-            p
-                margin-top: 0
-        .long-shadow
-            margin: 0 auto 36px auto
-        .tech-title
-            margin-bottom: 28px
-            font-weight: 500
-        &.flipped
-            .card-front
-                -webkit-transform: rotateY(180deg)
-                transform: rotateY(180deg)
-            .card-back
-                -webkit-transform: rotateY(0deg)
-                transform: rotateY(0deg)
-        &:hover
-            .card-front, .card-back
-                background: rgba(#fff, .9)
-                width: 110%
-                height: 330px
-                top: -15px
-                left: -5%
-            .card-front
-                padding-top: 44px
         &.javascript
             .long-shadow
                 font-size: 44px
                 span
                     top: -3px
-#state-tech

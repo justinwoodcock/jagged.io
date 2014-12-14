@@ -9,8 +9,10 @@
     <meta name="description" content="marketing-id stackable interface">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="bower_components/animate.css/animate.css" rel="stylesheet">
     <!-- build:css({.tmp,app}) css/style.css -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- endbuild -->
 </head>
@@ -20,7 +22,7 @@
     <![endif]-->
 
     <header id="header" ui-view="header"></header>
-    <section id="content" ui-view="content"></section>
+    <section id="content" class="animated" ui-view="content"></section>
     <footer id="footer" class="hidden" ui-view="footer"></footer>
 
     <!--[if lt IE 9]>
@@ -47,6 +49,8 @@
     <script src="components/menu/menu.controller.js"></script>
     <script src="components/home/home.controller.js"></script>
     <script src="components/tech/tech.controller.js"></script>
+    <script src="components/work/work.controller.js"></script>
+    <script src="components/quote/quote.controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>
