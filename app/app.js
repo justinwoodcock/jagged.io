@@ -4,7 +4,8 @@ var jagged = angular.module('Jagged', [
     'ngAnimate',
     'ui.router',
     'ui.bootstrap',
-    'restangular'
+    'restangular',
+    'vr.directives.slider'
 ]);
 
 jagged.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -24,7 +25,8 @@ jagged.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
                 templateUrl: '/components/footer/index.html'
             }
         }
-    }).state('menu', {
+    })
+    .state('menu', {
         url: '/menu',
         views: {
             header: {
@@ -39,7 +41,8 @@ jagged.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
                 templateUrl: '/components/footer/index.html'
             }
         }
-    }).state('tech', {
+    })
+    .state('tech', {
         url: '/tech',
         views: {
             header: {
@@ -54,7 +57,8 @@ jagged.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
                 templateUrl: '/components/footer/index.html'
             }
         }
-    }).state('work', {
+    })
+    .state('work', {
         url: '/work',
         views: {
             header: {
@@ -69,7 +73,8 @@ jagged.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
                 templateUrl: '/components/footer/index.html'
             }
         }
-    }).state('quote', {
+    })
+    .state('quote', {
         url: '/quote',
         views: {
             header: {
@@ -84,31 +89,46 @@ jagged.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
                 templateUrl: '/components/footer/index.html'
             }
         }
-    }).state('quote.name', {
+    })
+    .state('quote.name', {
         url: '/name',
         views: {
             quote: {
                 templateUrl: '/components/quote/quote.name.html'
-            },
-            quoteNavigation: {
-                templateUrl: '/components/quote/quote.navigation.html'
             }
         },
         next: 'quote.email'
-    }).state('quote.email', {
+    })
+    .state('quote.email', {
         url: '/email',
         views: {
             quote: {
                 templateUrl: '/components/quote/quote.email.html'
-            },
-            quoteNavigation: {
-                templateUrl: '/components/quote/quote.navigation.html'
             }
         },
-        next: 'quote.phone',
-        back: 'quote.name'
+        back: 'quote.name',
+        next: 'quote.phone'
+    })
+    .state('quote.phone', {
+        url: '/phone',
+        views: {
+            quote: {
+                templateUrl: '/components/quote/quote.phone.html'
+            }
+        },
+        back: 'quote.email',
+        next: 'quote.budget'
+    })
+    .state('quote.budget', {
+        url: '/budget',
+        views: {
+            quote: {
+                templateUrl: '/components/quote/quote.budget.html'
+            }
+        },
+        back: 'quote.phone',
+        next: 'quote.budget'
     });
-
     $urlRouterProvider.otherwise('/');
 });
 

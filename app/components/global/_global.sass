@@ -16,6 +16,9 @@ a
 .ng-hide
     display: none !important
 
+::-ms-tooltip
+    display: none
+
 .btn-long-shadow
     position: relative
     text-align: center
@@ -23,7 +26,7 @@ a
     width: 38px
     height: 38px
     font-size: 14px
-    line-height: $length+px
+    line-height: 38px
     @include border-radius(19px)
     background-color: transparent
     border: 2px solid rgba(#114f6f, .8)
@@ -33,10 +36,12 @@ a
         position: relative
         top: -3px
         left: -1px
-        height: $length+px
-        width: $length+px
+        height: 38px
+        width: 38px
+        @include border-radius(19px)
+        overflow: hidden
         color: #fff
-        @include long-shadow (rgba(#114f6f, .8), $length)
+        @include long-shadow (rgba(#114f6f, .8), 38)
 
 .long-shadow
     position: relative

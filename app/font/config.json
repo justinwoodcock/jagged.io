@@ -205,6 +205,18 @@
       "src": "entypo"
     },
     {
+      "uid": "7ad4d2306ebda8452e5e3eff3cd8241c",
+      "css": "thumbs-up",
+      "code": 59419,
+      "src": "entypo"
+    },
+    {
+      "uid": "429fba993b729174468a9493613ad1ba",
+      "css": "thumbs-down",
+      "code": 59418,
+      "src": "entypo"
+    },
+    {
       "uid": "540b6a4262be769515c79700618b4aea",
       "css": "address",
       "code": 59400,

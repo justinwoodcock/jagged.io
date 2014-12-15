@@ -1,10 +1,12 @@
-<button ng-if="state.current.back" class="btn-menu btn-long-shadow pull-left" ui-sref="{{state.current.back}}">
-    <span>  
-        <i class="icon-left-open"></i>
-    </span>
-</button>
-<button ng-if="state.current.next" class="btn-menu btn-long-shadow pull-right" ui-sref="{{state.current.next}}">
-    <span>  
-        <i class="icon-right-open"></i>
-    </span>
-</button>
+<div class="clearfix">
+    <button ng-if="state.current.next" class="btn-menu btn-long-shadow pull-right" ng-click="next()" type="submit">
+        <span>  
+            <i class="icon-right-open"></i>
+        </span>
+    </button>
+    <button ng-if="state.current.back" class="btn-menu btn-long-shadow pull-left" ui-sref="{{state.current.back}}">
+        <span>  
+            <i class="icon-left-open"></i>
+        </span>
+    </button>
+</div>
