@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- endbuild -->
 </head>
-<body id="state-{{state.name}}" ng-app="Jagged" ng-controller="JaggedController" ng-cloak>
+<body id="state-{{state.current.name}}" ng-app="Jagged" ng-controller="JaggedController" ng-cloak>
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -30,6 +30,7 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     <!-- build:js js/vendor.js -->
+    <script src="bower_components/ng-file-upload/angular-file-upload-shim.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
@@ -42,6 +43,8 @@
     <script src="bower_components/ng-table/ng-table.min.js"></script>
     <script src="bower_components/angular-touch/angular-touch.min.js"></script>
     <script src="bower_components/venturocket-angular-slider/build/angular-slider.min.js"></script>
+    <script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
+    <script src="bower_components/angular-inview/angular-inview.js"></script>
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) js/app.js -->
     <script src="app.js"></script>
@@ -53,6 +56,8 @@
     <script src="components/tech/tech.controller.js"></script>
     <script src="components/work/work.controller.js"></script>
     <script src="components/quote/quote.controller.js"></script>
+    <script src="components/about/about.controller.js"></script>
+    <script src="components/contact/contact.controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>

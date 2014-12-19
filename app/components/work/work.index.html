@@ -1,10 +1,11 @@
 <div id="work" class="container">
     <div id="project-list" class="cards row">
-        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects | filter:{tags:workFilter}">
+        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects">
+        <!-- <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects | filter:{tags:workFilter}"> -->
             <div class="card {{project.client|lowercase}}" ng-class="{'flipped':project.flipped}" ng-mouseover="project.interval=2500" ng-mouseout="project.interval=-1">
                 <div class="card-front">
                     <div class="screenshots carousel">
-                        <carousel interval="project.interval">
+                        <carousel interval="project.interval" disable-ng-animate>
                             <slide ng-if="project.thumbnail">
                                 <img class="img-responsive slide" ng-src="{{project.thumbnail}}" />
                             </slide>

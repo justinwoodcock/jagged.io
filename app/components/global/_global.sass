@@ -13,6 +13,9 @@ h1, h2, h3, h4, h5
 a
     color: $theme-dark
 
+.btn, a
+    transition: all 100ms linear
+
 .ng-hide
     display: none !important
 
@@ -97,6 +100,21 @@ a
                 opacity: 1
                 transition: opacity 100ms ease-in
                 transition-delay: 300ms
+            .card-flip
+                display: none
+            &:hover
+                .card-flip
+                    display: block
+                    position: absolute
+                    bottom: 0
+                    right: 0
+                    background: none
+                    outline: none
+                    border: none
+                    padding: 10px
+                    i
+                        position: relative
+                        top: 5px
         .card-back
             padding: 20px
             text-align: left
@@ -115,7 +133,7 @@ a
             .card-front
                 -webkit-transform: rotateY(180deg)
                 transform: rotateY(180deg)
-                .carousel, .info, .project-icon
+                .carousel, .info, .project-icon, .card-flip
                     opacity: 0
                     transition: opacity 200ms ease-in
             .card-back
@@ -141,4 +159,21 @@ a
                     display: block
                 .slide
                     @include border-radius(3px 3px 0 0)
+                .carousel-indicators
+                    li
+                        border-color: $theme-light
+                        &.active
+                            background-color: $theme-light
+                .carousel-control
+                    opacity: .75
+                    cursor: pointer
+                    .glyphicon
+                        font-family: 'icons' !important
+                        color: $theme-light
+                    &.left
+                        .glyphicon-chevron-left:before
+                            content: '\e819' !important
+                    &.right
+                        .glyphicon-chevron-right:before
+                            content: '\e818' !important
 

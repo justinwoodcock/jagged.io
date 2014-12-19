@@ -1,13 +1,14 @@
-<div class="container">
+<div id="tech" class="container">
     <div class="row">
-        <div class="col-xs-12">
+        <!-- <div class="col-xs-12">
             <div class="dropdown-wrapper">
                 <input class="tech-typeahead" type="text" ng-model="techFilter" typeahead="tech.title for tech in technologies | limitTo:8" placeholder="Filter out by technology type or name (ie Angular, Javascript, Frontend)" />
             </div>
-        </div>
+        </div> -->
         <div class="col-xs-12">
             <div id="tech-list" class="cards row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies | filter:{tags:techFilter}">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies">
+                <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies | filter:{tags:techFilter}"> -->
                     <div class="card {{tech.title|lowercase}}" ng-class="{'flipped':tech.flipped}">
                         <div class="card-front" ng-click="tech.flipped=true" >
                             <div class="long-shadow">
