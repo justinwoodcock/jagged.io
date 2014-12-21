@@ -6,12 +6,12 @@
 <head>
     <meta charset="utf-8">
     <title>jagged.io</title>
-    <meta name="description" content="marketing-id stackable interface">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css({.tmp,app}) css/style.css -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- endbuild -->
 </head>
@@ -25,10 +25,12 @@
     <footer id="footer" class="hidden" ui-view="footer"></footer>
 
     <!--[if lt IE 9]>
+    <!-- build:js(.) js/ie-sucks.js -->
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
+    <!-- endbuild -->
     <![endif]-->
-    <!-- build:js js/vendor.js -->
+    <!-- build:js(.) js/vendor.js -->
     <script src="bower_components/ng-file-upload/angular-file-upload-shim.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
