@@ -1,0 +1,6 @@
+<div class="form-group">
+    <label for="quote-email">email</label>
+    <input type="email" class="form-control" ng-class="{'invalid':invalid}" id="quote-email" placeholder="enter email" ng-keypress="isEnter($event)" ng-model="quote.email" required>
+    <i ng-class="{'hidden':!invalid}" class="valid icon-thumbs-up"></i>
+    <i class="valid icon-thumbs-down"></i>
+</div>

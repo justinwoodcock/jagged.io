@@ -1,0 +1,16 @@
+<div id="quote" class="container">
+    <div class="row">
+        <h1 class="col-xs-12">Request a Quote</h1>
+        <div class="col-xs-12 col-md-5 col-lg-4">
+            <p>Answer these questions so we can provide you with a good quote.</p>
+        </div>
+        <div class="col-xs-12 col-md-7 col-lg-8">
+            <div class="form-wrapper">
+                <form ng-class="{'invalid':invalid,'shake animated':shake}" name="formQuote" id="form-quote" ng-submit="submitForm()" novalidate>
+                    <div id="state-quote" class="animated" ui-view="quote"></div>
+                    <div class="quote-navigation" ng-include="'components/quote/quote.navigation.html'"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

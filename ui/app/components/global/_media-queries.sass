@@ -1,0 +1,92 @@
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+    #hero
+        h1
+            .title
+                font-size: 28px
+            .description
+                font-size: 20px
+        .icon-mountains
+            font-size: 180px
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+    #hero
+        h1
+            .title
+                font-size: 22px
+            .description
+                font-size: 14px
+                line-height: 26px
+        a
+            font-size: 12px
+        .icon-mountains
+            font-size: 140px
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+    #hero
+        text-align: center
+        h1
+            margin: 0 auto 20px
+            .title
+                font-size: 36px
+                margin-bottom: 30px
+            .description
+                font-size: 28px
+                line-height: 54px
+        a
+            font-size: 18px
+            font-weight: 200
+        .icon-mountains
+            font-size: 180px
+            top: 100px
+            margin-left: -400px
+
+    #curtain
+        .container
+            width: 90%
+    #work
+        .card
+            height: 600px
+            &:hover
+                .card-front, .card-back
+                    height: 630px
+
+    #contact
+        padding-top: 40px
+        h2
+            font-size: 22px
+
+@media only screen and (max-width : 650px)
+    #work
+        .card
+            height: 540px
+            &:hover
+                .card-front, .card-back
+                    height: 570px
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px)
+    #hero
+        padding-top: 0
+        h1
+            margin-top: 0
+            text-align: center
+            .title
+                font-size: 32px
+            .description
+                font-size: 14px
+                line-height: 0
+        .icon-mountains
+            font-size: 120px
+            top: 0
+
+    #work
+        .card
+            height: 440px
+            &:hover
+                .card-front, .card-back
+                    height: 470px
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px)

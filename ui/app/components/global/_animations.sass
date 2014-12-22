@@ -1,0 +1,25 @@
+#content[ui-view]
+    position: absolute
+    left: 0
+    right: 0
+    -webkit-transition: all .25s ease-in-out
+    -moz-transition: all .25s ease-in-out
+    -o-transition: all .25s ease-in-out
+    transition: all .25s ease-in-out
+
+#content
+    &.ng-enter
+        @include effect(bounceInUp)
+    &.ng-leave
+        @include effect(bounceOutDown)
+
+#state-quote
+    position: relative
+    left: 0
+    right: 0
+    &.ng-enter
+        @include effect(bounceInRight)
+    &.ng-leave
+        position: absolute!important
+        top: 0
+        @include effect(bounceOutRight)
