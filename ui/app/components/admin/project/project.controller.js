@@ -72,7 +72,10 @@ jagged.controller('ProjectController', ['$scope', 'AuthFactory', '$state', 'Jagg
             for (var i = 0; i < $files.length; i++) {
                 var file = $files[i];
                 $scope.upload = $upload.upload({
-                    url: 'http://jagged.dev:1337/file/upload',
+                    // dev url
+                    //url: 'http://jagged.dev:1337/file/upload',
+                    // prod url
+                    url: 'http://api.jagged.io/file/upload',
                     data: {
                         files: file
                     }
