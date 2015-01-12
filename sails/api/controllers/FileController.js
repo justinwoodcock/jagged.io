@@ -12,7 +12,10 @@ module.exports = {
 
       var uploadFile = req.file('files');
 
-      uploadFile.upload({ dirname: '/Users/justin/Sites/jagged/webapp/ui/app/images/'}, function onUploadComplete (err, files) {
+      //var directory = '/Users/justin/Sites/jagged/webapp/ui/app/images/';
+      var directory = '/Sites/jagged.io/ui/images/';
+
+      uploadFile.upload({ dirname: directory}, function onUploadComplete (err, files) {
                                                                               
           if (err) return res.serverError(err);                              // IF ERROR Return and send 500 error with error
           
