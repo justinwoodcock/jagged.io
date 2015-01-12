@@ -13,7 +13,7 @@ module.exports = {
       var uploadFile = req.file('files');
 
       //var directory = '/Users/justin/Sites/jagged/webapp/ui/app/images/';
-      var directory = '/Sites/jagged.io/ui/images/';
+      var directory = '/Sites/jagged.io/images/';
 
       uploadFile.upload({ dirname: directory}, function onUploadComplete (err, files) {
                                                                               

@@ -81,8 +81,8 @@ jagged.controller('ProjectController', ['$scope', 'AuthFactory', '$state', 'Jagg
                 }).success(function(data, status, headers, config) {
                     console.log(file)
                     var imageObject = data.file[0];
-                    //imageObject.storedAs = imageObject.fd.replace('/var/www/SugarSD/ui/dist/images/', '');
-                    imageObject.storedAs = imageObject.fd.replace('/Users/justin/Sites/jagged/webapp/ui/app/images/', '');
+                    imageObject.storedAs = imageObject.fd.replace('/Sites/jagged.io/images/', '');
+                    //imageObject.storedAs = imageObject.fd.replace('/Users/justin/Sites/jagged/webapp/ui/app/images/', '');
                     $scope.ImageEntity.post(imageObject).then(function(data) {
                         getImages();
                         if(!angular.isDefined($scope.project.images)) {
