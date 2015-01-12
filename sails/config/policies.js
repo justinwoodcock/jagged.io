@@ -44,7 +44,12 @@ module.exports.policies = {
     'create': ['sessionAuth'],
     'update': ['sessionAuth'],
     'destroy': ['sessionAuth']
-  }
+  },
+  FileController: {
+    'create': ['sessionAuth'],
+    'update': ['sessionAuth'],
+    'destroy': ['sessionAuth']
+  },
 
   // RabbitController: {
 
