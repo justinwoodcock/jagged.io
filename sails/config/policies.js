@@ -26,7 +26,7 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': true,
 
   /***************************************************************************
   *                                                                          *
@@ -34,7 +34,19 @@ module.exports.policies = {
   * and its actions                                                          *
   *                                                                          *
   ***************************************************************************/
-	// RabbitController: {
+	
+  TechController: {
+    'create': ['sessionAuth'],
+    'update': ['sessionAuth'],
+    'destroy': ['sessionAuth']
+  },
+  ProjectController: {
+    'create': ['sessionAuth'],
+    'update': ['sessionAuth'],
+    'destroy': ['sessionAuth']
+  }
+
+  // RabbitController: {
 
 		// Apply the `false` policy as the default for all of RabbitController's actions
 		// (`false` prevents all access, which ensures that nothing bad happens to our rabbits)

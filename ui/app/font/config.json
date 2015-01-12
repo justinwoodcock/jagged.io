@@ -255,6 +255,12 @@
       "src": "entypo"
     },
     {
+      "uid": "c77fd2fd065b5fe16d6f2b41e190b266",
+      "css": "pencil",
+      "code": 59429,
+      "src": "entypo"
+    },
+    {
       "uid": "540b6a4262be769515c79700618b4aea",
       "css": "address",
       "code": 59400,
@@ -270,6 +276,12 @@
       "uid": "64f5a50cf7ac972a56a9a511acb5d28e",
       "css": "map",
       "code": 59402,
+      "src": "entypo"
+    },
+    {
+      "uid": "2626e3a1bbcd90e45849af3b58a1d594",
+      "css": "trash",
+      "code": 59430,
       "src": "entypo"
     },
     {

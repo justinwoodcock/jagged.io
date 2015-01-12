@@ -1,8 +1,15 @@
 'use strict';
 
-jagged.controller('WorkController', ['$scope',
-    function($scope) {
-        $scope.projects = [
+jagged.controller('WorkController', ['$scope', 'JaggedFactory',
+    function($scope, JaggedFactory) {
+
+        JaggedFactory.createEntity('project').then(function(data) {
+            $scope.ProjectEntity = data;
+            $scope.projects = data.plain();
+            console.log(data.plain())
+        });
+
+        $scope.projectsStatic = [
             {
                 title: 'Sony store',
                 client: 'Sony',

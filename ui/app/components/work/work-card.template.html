@@ -1,0 +1,35 @@
+<div class="card {{project.client|lowercase}}" ng-class="{'flipped':project.flipped}" ng-mouseover="project.interval=2500" ng-mouseout="project.interval=-1" card-height>
+    <div class="card-front">
+        <div class="screenshots carousel">
+            <carousel interval="project.interval" disable-ng-animate>
+                <slide ng-if="project.thumbnail">
+                    <img class="img-responsive slide" ng-src="{{project.thumbnail}}" />
+                </slide>
+                <slide ng-repeat="image in project.images">
+                    <img class="img-responsive slide" ng-src="images/{{image.storedAs}}" />
+                </slide>
+            </carousel>
+        </div>
+        <div class="project-icon">
+            <div class="long-shadow">
+                <span>
+                    <i class="{{project.icon}}"></i>
+                </span>
+            </div>
+        </div>
+        <div class="info" ng-click="project.flipped=true">
+            <h3 class="project-title">{{project.title}}</h3>
+            <a class="btn-icon btn-long-shadow btn-link" href="{{project.url}}" target="_blank">
+                <span>
+                    <i class="icon-link"></i>
+                </span>
+            </a>
+        </div>
+        <button class="card-flip" ng-click="project.flipped=true">
+            <i class="icon-arrow-curved"></i>
+        </button>
+    </div>
+    <div class="card-back" ng-click="project.flipped=false" ng-mouseout="project.flipped=false">
+        <p>{{project.description}}</p>
+    </div>
+</div>

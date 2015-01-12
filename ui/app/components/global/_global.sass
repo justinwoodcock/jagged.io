@@ -8,8 +8,10 @@ body
     padding-top: 102px
 
 h1, h2, h3, h4, h5
-    font-weight: 300
-
+    font-weight: 400
+    //color: #156188
+    .small
+        color: #fff
 a
     color: $theme-dark
 
@@ -71,10 +73,12 @@ a
 .cards
     .card
         position: relative
-        height: 300px
+        //min-height: 300px
+        height: 100%
         -webkit-perspective: 1000
         perspective: 1000
         margin-bottom: 30px
+        @include border-radius(3px)
         .card-front, .card-back
             border: 1px solid #13597d
             background: rgba(#fff, .8)
@@ -118,7 +122,7 @@ a
         .card-back
             padding: 20px
             text-align: left
-            background-color: rgba(255,255,255,.9)
+            background: rgba(#fff, .8)
             -webkit-transform: rotateY(180deg)
             transform: rotateY(180deg)
             cursor: default
@@ -143,7 +147,7 @@ a
             .card-front, .card-back
                 background: rgba(#fff, .9)
                 width: 110%
-                height: 330px
+                height: 110%
                 top: -15px
                 left: -5%
             .card-front
@@ -176,4 +180,3 @@ a
                     &.right
                         .glyphicon-chevron-right:before
                             content: '\e818' !important
-

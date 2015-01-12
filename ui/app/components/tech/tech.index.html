@@ -9,22 +9,7 @@
             <div id="tech-list" class="cards row">
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies">
                 <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies | filter:{tags:techFilter}"> -->
-                    <div class="card {{tech.title|lowercase}}" ng-class="{'flipped':tech.flipped}">
-                        <div class="card-front" ng-click="tech.flipped=true" >
-                            <div class="long-shadow">
-                                <span>  
-                                    <i class="devicons {{tech.icon}}"></i>
-                                </span>
-                            </div>
-                            <h3 class="tech-title">{{tech.title}}</h3>
-                            <a class="btn-icon" href="{{tech.url}}" target="_blank">
-                                <i class="icon-link"></i>
-                            </a>
-                        </div>
-                        <div class="card-back" ng-click="tech.flipped=false" ng-mouseout="tech.flipped=false">
-                            <p>{{tech.description}}</p>
-                        </div>
-                    </div>
+                <div ng-include="'/components/tech/tech-card.template.html'"></div>
                 </div>
             </div>
         </div>

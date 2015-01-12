@@ -1,0 +1,21 @@
+<div class="card {{tech.title|lowercase}}" ng-class="{'flipped':tech.flipped}">
+    <div class="card-front" ng-click="tech.flipped=true" >
+        <div class="long-shadow">
+            <span>
+            <i class="devicons {{tech.icon}}"></i>
+            </span>
+        </div>
+        <h3 class="tech-title">{{tech.title}}</h3>
+        <a class="btn-icon btn-long-shadow btn-link" href="{{tech.url}}" target="_blank">
+            <span>
+            <i class="icon-link"></i>
+            </span>
+        </a>
+        <button class="card-flip" ng-click="project.flipped=true">
+            <i class="icon-arrow-curved"></i>
+        </button>
+    </div>
+    <div class="card-back" ng-click="tech.flipped=false" ng-mouseout="tech.flipped=false">
+        <p>{{tech.description}}</p>
+    </div>
+</div>

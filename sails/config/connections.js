@@ -31,7 +31,7 @@ module.exports.connections = {
   ***************************************************************************/
   jaggedMongo: {
     adapter: 'sails-mongo',
-    url: 'mongodb://<user>:<password>@ds027771.mongolab.com:27771/<db>'
+    url: 'mongodb://sails:superduper@ds027771.mongolab.com:27771/jagged'
   }
 
 };

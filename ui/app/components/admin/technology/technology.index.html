@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 tech-form">
+            <h1>Technology
+                <span class="small">
+                    <span ng-if="update"> update </span>
+                    <span ng-if="!update"> add </span>
+                    a technology
+                </span>
+            </h1>
+            <div id="alert" class="alert alert-{{alert.type}}" role="alert" ng-show="alert.show">
+                <span class="alert-message">{{alert.message}}</span>
+                <button type="button" class="close" ng-click="alert.show=false"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <form role="form" name="techForm" ng-submit="addTech()">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <label for="tech-title">title</label>
+                            <input type="text" class="form-control" id="tech-title" placeholder="enter title" ng-model="tech.title">
+                        </div>
+                        <div class="form-group">
+                            <label for="tech-description">description</label>
+                            <textarea class="form-control" id="tech-description" placeholder="enter description" rows="7" ng-model="tech.description"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <label for="tech-url">url</label>
+                            <input type="text" class="form-control" id="tech-url" placeholder="enter url" ng-model="tech.url">
+                        </div>
+                        <div class="form-group">
+                            <label for="tech-icon">icon</label>
+                            <input type="text" class="form-control" id="tech-icon" placeholder="enter icon" ng-model="tech.icon">
+                        </div>
+                        <div class="form-group">
+                            <label for="tech-position">position</label>
+                            <input type="number" class="form-control" id="tech-position" placeholder="enter position" ng-model="tech.position">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="tech.featured"> Make Featured
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary btn-danger" type="button" ui-sref="admin">cancel</button>
+                        <button class="btn btn-primary btn-danger" type="button" ng-click="clear()" ng-if="!update">clear</button>
+                        <button class="btn btn-primary pull-right" type="submit" ng-if="!update">add technology</button>
+                        <button class="btn btn-primary pull-right" type="button" ng-click="editItem()" ng-if="update">update technology</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

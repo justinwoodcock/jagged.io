@@ -1,6 +1,6 @@
 #work
     .card
-        height: 420px
+        //height: 420px
         .carousel-control
             //display: none
         .card-front
@@ -8,6 +8,8 @@
         .info
             position: relative
             border-top: 3px solid rgba(#114f6f, .8)
+            //background-color: rgba(#fff, .9)
+            padding: 0 20px 40px 20px
             .project-title
                 margin: 70px 0 20px 0
         .screenshots
@@ -15,6 +17,16 @@
         &:hover
             .card-front, .card-back
                 height: 450px
+        .btn-link
+            //display: block
+            background: $theme-dark
+            span
+                left: 1px
+                top: 0
+                height: auto
+                width: auto
+            i
+                font-size: 16px
     .project-icon
         position: absolute
         left: 50%

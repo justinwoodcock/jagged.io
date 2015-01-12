@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Admin <span class="small">This is the place where you do the things</span></h1>
+            <div id="alert" class="alert alert-{{alert.type}}" role="alert" ng-show="alert.show">
+                <span class="alert-message">{{alert.message}}</span>
+                <button type="button" class="close" ng-click="alert.show=false"><span aria-hidden="true">&times;</span></button>
+            </div>
+        </div>
+        <div class="col-xs-12 section" ng-controller="ProjectController">
+            <h2 class="pull-left">Projects</h2>
+            <button class="btn btn-primary pull-right" ui-sref="adminProject">add new project</button>
+            <table ng-table="tableParams" class="table">
+                <tr ng-repeat="item in $data">
+                    <td sortable="title" data-title="'Title'" class="title">
+                        <i ng-if="item.icon" class="{{item.icon}}"></i>
+                        {{item.title}}
+                    </td>
+                    <td sortable="client" data-title="'Client'" class="client">
+                        {{item.client}}
+                    </td>
+                    <td data-title="'Url'" class="url">
+                        {{item.url}}
+                    </td>
+                    <td sortable="position" data-title="'Position'" class="position">
+                        {{item.position}}
+                    </td>
+                    <td sortable="featured" data-title="'Featured'" class="featured">
+                        {{item.featured}}
+                    </td>
+                    <td data-title="'Images'" class="images">
+                        {{item.images.length}}
+                    </td>
+                    <td data-title="'Tech'" class="tech">
+                        {{item.tech.length}}
+                    </td>
+                    <td data-title="'Actions'" width="10%">
+                        <i class="icon-pencil" ui-sref="adminProject(item)"></i>
+                        <i class="icon-trash" ng-click="delete(item, 'ProjectEntity')"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-xs-12 section" ng-controller="TechnologyController">
+            <h2 class="pull-left">Technologies</h2>
+            <button class="btn btn-primary pull-right" ui-sref="adminTechnology">add new tech</button>
+            <table ng-table="tableParams" class="table">
+                <tr ng-repeat="item in $data">
+                    <td sortable="title" data-title="'Title'" class="title">
+                        <i ng-if="item.icon" class="devicons {{item.icon}}"></i>
+                        {{item.title}}
+                    </td>
+                    <td data-title="'Url'" class="url">
+                        {{item.url}}
+                    </td>
+                    <td sortable="position" data-title="'Position'" class="position">
+                        {{item.position}}
+                    </td>
+                    <td sortable="featured" data-title="'Featured'" class="featured">
+                        {{item.featured}}
+                    </td>
+                    <td data-title="'Actions'" width="10%">
+                        <i class="icon-pencil" ui-sref="adminTechnology(item)"></i>
+                        <i class="icon-trash" ng-click="delete(item, 'TechEntity')"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,16 @@
 'use strict';
 
-jagged.controller('TechController', ['$scope',
-    function($scope) {
+jagged.controller('TechController', ['$scope', 'JaggedFactory',
+    function($scope, JaggedFactory) {
+
+        JaggedFactory.createEntity('tech').then(function(data) {
+            $scope.TechEntity = data;
+            $scope.technologies = data.plain();
+            console.log(data.plain())
+        });
 
         // Temporary data until i get my api stood up
-        $scope.technologies = [
+        $scope.technologiesStatic = [
             // {
             //     title: 'title',
             //     description: 'description',

@@ -16,6 +16,14 @@ module.exports = {
         tech: 'array',
         tags: 'array',
         attachments: 'array',
-        screenshots: 'array'
+        screenshots: 'array',
+        position: {
+            type: 'integer',
+            defaultsTo: 100
+        },
+        featured: {
+            type: 'boolean',
+            defaultsTo: false
+        }
     }
 };

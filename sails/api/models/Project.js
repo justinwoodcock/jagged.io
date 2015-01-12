@@ -11,7 +11,19 @@ module.exports = {
         title: 'string',
         description: 'string',
         url: 'string',
-        icon: 'string',
-        experience: 'integer'
+        icon: {
+            type: 'string',
+            defaultsTo: 'icon-jagged'
+        },
+        experience: 'integer',
+        images: 'array',
+        position: {
+            type: 'integer',
+            defaultsTo: 100
+        },
+        featured: {
+            type: 'boolean',
+            defaultsTo: false
+        }
     }
 };
