@@ -268,9 +268,9 @@ jagged.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 jagged.config(['RestangularProvider',
     function(RestangularProvider) {
         // Production
-        // var apiUrl = 'http://api.jagged.io';
+        var apiUrl = 'http://api.jagged.io';
         // Development
-        var apiUrl = 'http://jagged.dev:1337';
+        //var apiUrl = 'http://jagged.dev:1337';
         RestangularProvider.setBaseUrl(apiUrl);
         RestangularProvider
         .setBaseUrl(apiUrl)
