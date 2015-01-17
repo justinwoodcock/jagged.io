@@ -29,7 +29,7 @@
             <i class="icon-arrow-curved"></i>
         </button>
     </div>
-    <div class="card-back" ng-click="project.flipped=false" ng-mouseout="project.flipped=false">
-        <p>{{project.description}}</p>
+    <div class="card-back" ng-click="project.flipped=false" ng-mouseout="project.flipped=false" ng-bind-html="project.description">
+        <!-- <p>{{project.description}}</p> -->
     </div>
 </div>

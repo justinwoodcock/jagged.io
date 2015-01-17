@@ -3,7 +3,6 @@
 jagged.controller('ProjectController', ['$scope', 'AuthFactory', '$state', 'JaggedFactory', '$timeout', '$upload', '$filter', 'ngTableParams',
     function($scope, AuthFactory, $state, JaggedFactory, $timeout, $upload, $filter, ngTableParams) {
         var initialLoad = true;
-        console.log($state)
         if(!angular.isDefined($scope.project)) {
             $scope.project = {};
         }
@@ -31,7 +30,7 @@ jagged.controller('ProjectController', ['$scope', 'AuthFactory', '$state', 'Jagg
         };
         
         $scope.addProject = function() {
-            if($scope.project.description.length>0) {
+            if(angular.isDefined($scope.project.description)) {
                 $scope.project.description = marked($scope.project.description);
             }
             $scope.ProjectEntity.post($scope.project).then(function(data) {
