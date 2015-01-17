@@ -11,7 +11,7 @@ jagged.directive('cardHeight', function() {
                 $element[0].style.height = cardHeight;
                 // $element[0].children[0].style.height = cardHeight;
                 // $element[0].children[1].style.height = cardHeight;
-            }, 100);
+            }, 1000);
         }
     }
 })

@@ -1,4 +1,4 @@
-<div id="hero" ng-class="{'neg-z':showContact}">
+<div id="hero" ng-class="{'neg-z':false}" style="height:{{windowHeight}}px;">
     <div class="container">
         <div class="row" ng-class="{'animated fadeOutUp':fadeOut}">
             <div class="col-xs-12 col-sm-4">
@@ -18,9 +18,9 @@
         </div>
     </div>
 </div>
-<div id="curtain" in-view="fadeHero()">
+<div id="curtain" style="margin-top:{{windowHeight}}px;">
     <div id="tech">
-        <div class="container" in-view="showContact=false">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <h2>Technology</h2>
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div id="work" in-view="showContact=true">
+    <div id="work">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -54,42 +54,6 @@
                     <div id="project-list" class="cards row">
                         <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects | orderBy: 'position'">
                             <div ng-include="'/components/work/work-card.template.html'"></div>
-                            
-                            <!-- <div class="card {{project.client|lowercase}}" ng-class="{'flipped':project.flipped}" ng-mouseover="project.interval=2500" ng-mouseout="project.interval=-1">
-                                <div class="card-front">
-                                    <div class="screenshots carousel">
-                                        <carousel interval="project.interval" disable-ng-animate>
-                                            <slide ng-if="project.thumbnail">
-                                                <img class="img-responsive slide" ng-src="{{project.thumbnail}}" />
-                                            </slide>
-                                            <slide ng-repeat="screenshot in project.screenshots">
-                                                <img class="img-responsive slide" ng-src="{{screenshot}}"/>
-                                            </slide>
-                                        </carousel>
-                                    </div>
-                                    <div class="project-icon">
-                                        <div class="long-shadow">
-                                            <span>  
-                                                <i class="{{project.icon}}"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="info" ng-click="project.flipped=true">
-                                        <h3 class="project-title">{{project.title}}</h3>
-                                        <a class="btn-icon" href="{{project.url}}" target="_blank">
-                                            <i class="icon-link"></i>
-                                        </a>
-                                    </div>
-                                    <button class="card-flip" ng-click="project.flipped=true">
-                                        <i class="icon-arrow-curved"></i>
-                                    </button>
-                                </div>
-                                <div class="card-back" ng-click="project.flipped=false" ng-mouseout="project.flipped=false">
-                                    <p>{{project.description}}</p>
-                                </div>
-                            </div> -->
-
-                            
                         </div>
                     </div>
                 </div>
@@ -103,7 +67,7 @@
         </div>
     </div>
 </div>
-<footer id="contact" ng-class="{'neg-z hidden':!showContact}">
+<footer id="contact" ng-class="{'pos-z':scrollLocation > showFooter}">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-center">

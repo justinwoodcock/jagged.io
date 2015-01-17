@@ -7,7 +7,6 @@ var jagged = angular.module('Jagged', [
     'restangular',
     'vr.directives.slider',
     'angularFileUpload',
-    'angular-inview',
     'ngTable',
     'hc.marked'
 ]);

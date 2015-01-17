@@ -14,13 +14,17 @@
         & + .btn
     .neg-z
         z-index: -1
+    .pos-z
+        z-index: 1
     .btn
         margin-top: 20px
 #hero
     width: 100%
-    height: 100%
+    //height: 100%
+    //height: 800px
     position: fixed
     padding-top: 140px
+    background: $theme-light
     h1
         color: #fff
         margin-top: 120px
@@ -44,12 +48,14 @@
 
 #curtain
     position: relative
-    top: 100%
+    //margin-top: 800px
+    //top: 100%
     z-index: 11
     width: 100%
     min-height: 100%
     border-top: 1px solid #0f4763
     border-bottom: 1px solid #0f4763
+    background: $theme-dark
     //margin-bottom: 100%
     margin-bottom: 540px
     #tech
@@ -77,6 +83,7 @@
     //min-height: 100%
     height: 540px
     padding: 70px 0 0 0
+    z-index: -1
     h2
         line-height: 52px
         color: lighten($theme-dark, 10%)
