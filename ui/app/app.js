@@ -8,7 +8,8 @@ var jagged = angular.module('Jagged', [
     'vr.directives.slider',
     'angularFileUpload',
     'ngTable',
-    'hc.marked'
+    'hc.marked',
+    'ngSanitize'
 ]);
 
 jagged.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
