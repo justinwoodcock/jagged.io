@@ -44,10 +44,12 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <button class="btn btn-primary btn-danger" type="button" ui-sref="admin">cancel</button>
-                        <button class="btn btn-primary btn-danger" type="button" ng-click="clear()" ng-if="!update">clear</button>
-                        <button class="btn btn-primary pull-right" type="submit" ng-if="!update">add technology</button>
-                        <button class="btn btn-primary pull-right" type="button" ng-click="editItem()" ng-if="update">update technology</button>
+                        <div class="form-buttons">
+                            <button class="btn btn-primary" type="submit" ng-if="!update">add technology</button>
+                            <button class="btn btn-primary" type="button" ng-click="editItem()" ng-if="update">update technology</button>
+                            <button class="btn btn-primary btn-danger pull-right" type="button" ui-sref="admin">cancel</button>
+                            <button class="btn btn-primary btn-danger pull-right" type="button" ng-click="clear()" ng-if="!update">clear</button>
+                        </div>
                     </div>
                 </div>
             </form>

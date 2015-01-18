@@ -1,6 +1,7 @@
 <div id="work" class="container">
+    <loader ng-show="loading"></loader>
     <div id="project-list" class="cards row">
-        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects">
+        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects" ng-class="{'invisible':loading}">
         <!-- <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects | filter:{tags:workFilter}"> -->
             <div ng-include="'/components/work/work-card.template.html'"></div>
         </div>
