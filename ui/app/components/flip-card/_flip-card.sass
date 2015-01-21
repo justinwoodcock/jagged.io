@@ -1,0 +1,67 @@
+.card
+    position: absolute
+    //-webkit-transform-style: preserve-3d
+    .card-front, .card-back
+        @include border-radius(3px)
+        color: $theme-dark
+        background: rgba(#fff, .8)
+        border: 1px solid #13597d
+        transition: top 100ms ease-in, left 100ms ease-in, width 100ms ease-in, height 100ms ease-in
+    .card-front
+        position: relative
+        padding: 20px
+        -webkit-transform: rotateY(0deg)
+        transform: rotateY(0deg)
+        .card-flip
+            display: none         
+    .card-back
+        position: absolute
+        display: none
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0
+        bottom: 0
+        -webkit-backface-visibility: hidden
+        backface-visibility: hidden
+        -webkit-transform: rotateY(180deg)
+        transform: rotateY(180deg)
+        border: 1px solid #c8c8c8
+        border-radius: 3px
+        background: #f8f8f8
+        .back-inner
+            padding: 20px
+    &.flipped
+        .card-front
+            -webkit-backface-visibility: hidden
+            backface-visibility: hidden
+            -webkit-transform: rotateY(180deg)
+            transform: rotateY(180deg)
+            -webkit-transition-delay: 100ms
+            transition-delay: 100ms   
+        .card-back
+            display: block
+            //height: 105%
+    &:hover
+        z-index: 11
+        .card-front, .card-back
+            background: rgba(#fff, .9)
+            width: 110%
+            top: -10px
+            left: -5%
+            z-index: 11
+        .card-front
+            .card-flip
+                display: block
+                position: absolute
+                bottom: 0
+                right: 0
+                background: none
+                outline: none
+                border: none
+                padding: 10px
+                i
+                    position: relative
+                    top: 5px
+
+

@@ -1,22 +1,47 @@
 #work
     .card
-        //height: 420px
-        .carousel-control
-            //display: none
+        width: calc(33.3333333333% - 30px)
         .card-front
             padding: 0
+        .carousel, .info, .project-icon
+            opacity: 1
+            transition: opacity 100ms ease-in
+            transition-delay: 100ms
+        .carousel-indicators
+            bottom: 50px
+        .carousel-indicators, .carousel-control
+            display: none
         .info
             position: relative
+            text-align: center
             border-top: 3px solid rgba(#114f6f, .8)
             //background-color: rgba(#fff, .9)
             padding: 0 20px 40px 20px
-            .project-title
-                margin: 70px 0 20px 0
+        .project-title
+            margin: 70px 0 20px 0
         .screenshots
-            transition: all 200ms ease-in-out
+            //transition: all 200ms ease-in-out
+        &.flipped
+            .carousel, .info, .project-icon
+                opacity: 0
+                transition: opacity 100ms ease-in
+                transition-delay: 0ms
         &:hover
-            .card-front, .card-back
-                height: 450px
+            .carousel
+                .carousel-indicators, .carousel-control
+                    display: block
+                .carousel-control
+                    opacity: .75
+                    cursor: pointer
+                    .glyphicon
+                        font-family: 'icons' !important
+                        color: $theme-light
+                    &.left
+                        .glyphicon-chevron-left:before
+                            content: '\e819' !important
+                    &.right
+                        .glyphicon-chevron-right:before
+                            content: '\e818' !important
         .btn-link
             //display: block
             background: $theme-dark
@@ -37,7 +62,6 @@
             font-size: 22px
             top: 15px
         span
-            position: static
             text-indent: -5px
         .icon-intuit
             top: -14px

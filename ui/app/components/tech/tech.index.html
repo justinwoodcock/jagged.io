@@ -1,17 +1,18 @@
-<div id="tech" class="container">
-    <div class="row">
-        <!-- <div class="col-xs-12">
-            <div class="dropdown-wrapper">
-                <input class="tech-typeahead" type="text" ng-model="techFilter" typeahead="tech.title for tech in technologies | limitTo:8" placeholder="Filter out by technology type or name (ie Angular, Javascript, Frontend)" />
-            </div>
-        </div> -->
-        <div class="col-xs-12">
-            <div id="tech-list" class="cards row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies | filter:{tags:techFilter}"> -->
-                <div ng-include="'/components/tech/tech-card.template.html'"></div>
+<div id="tech">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="dropdown-wrapper">
+                    <input class="tech-typeahead" type="text" ng-model="techFilter" typeahead="tech.title for tech in technologies | limitTo:8" placeholder="Filter out by technology type or name (ie Angular, Javascript, Frontend)" />
                 </div>
             </div>
         </div>
     </div>
+    <div id="tech-list" class="container">
+        <loader ng-show="loading"></loader>
+        <div class="row" ng-class="{'invisible':loading}">
+                <flip-card template="components/flip-card/flip-card.tech.template.html" ng-repeat="tech in technologies | filter:{tags:techFilter}"></flip-card>
+        </div>
+    </div>
 </div>
+

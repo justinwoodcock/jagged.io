@@ -1,0 +1,21 @@
+<div class="card {{tech.title|lowercase}} tech" ng-class="{'flipped':flipped,'pulse animated':isHovered}" ng-mouseenter="isHovered=true" ng-mouseleave="isHovered=false;flipped=false">
+    <div class="card-front" ng-click="flipped=true" ng-class="{'animated flipInY':!flipped}">
+        <div class="long-shadow">
+            <span>
+            <i class="devicons {{tech.icon}}"></i>
+            </span>
+        </div>
+        <h3 class="tech-title">{{tech.title}}</h3>
+        <a class="btn-icon btn-long-shadow btn-link" href="{{tech.url}}" target="_blank">
+            <span>
+            <i class="icon-link"></i>
+            </span>
+        </a>
+        <button class="card-flip" ng-click="flipped=true">
+            <i class="icon-arrow-curved"></i>
+        </button>
+    </div>
+    <div class="card-back" ng-click="flipped=false" ng-mouseleave="flipped=false" ng-class="{'animated flipInY':flipped}">
+        <div class="back-inner" ng-bind-html="tech.description"></div>
+    </div>
+</div>

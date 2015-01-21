@@ -1,0 +1,12 @@
+<div class="card" ng-class="{'flipped':flipped}" ng-init="flipped=false" ng-click="flipped=!flipped">
+    <div class="card-front" ng-class="{'animated flipInY':!flipped}">
+        <img src="http://lorempicsum.com/simpsons/627/300/4" class="img-responsive">
+        <h1>front</h1>
+        <p>Hola, senior.</p>
+    </div>
+    <div class="card-back" ng-class="{'animated flipInY':flipped}">
+        <div class="back-inner">
+            <h1>back</h1>
+        </div>
+    </div>
+</div>

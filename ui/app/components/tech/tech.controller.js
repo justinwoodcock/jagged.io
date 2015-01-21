@@ -1,13 +1,27 @@
 'use strict';
 
-jagged.controller('TechController', ['$scope', 'JaggedFactory',
-    function($scope, JaggedFactory) {
-
+jagged.controller('TechController', ['$scope', 'JaggedFactory', '$timeout', '$state',
+    function($scope, JaggedFactory, $timeout, $state) {
+        $scope.loading = true;
         JaggedFactory.createEntity('tech').then(function(data) {
             $scope.TechEntity = data;
-            $scope.technologies = data.plain();
-            console.log(data.plain())
+            if($state.current.name === 'home') {
+                $scope.technologies = _.where(data.plain(), {'featured':true});
+            } else {
+                $scope.technologies = data.plain();
+            }
         });
+
+        $timeout(function() {
+            var container = document.querySelector('#tech-list');
+            var pckry = new Packery( container, {
+                // options
+                itemSelector: '.card',
+                gutter: 30
+                //columnWidth: '#grid-sizer'
+            });
+            $scope.loading = false;
+        }, 1500);
 
         // Temporary data until i get my api stood up
         $scope.technologiesStatic = [

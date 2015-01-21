@@ -1,9 +1,17 @@
-<div id="work" class="container">
-    <loader ng-show="loading"></loader>
-    <div id="project-list" class="cards row">
-        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects" ng-class="{'invisible':loading}">
-        <!-- <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects | filter:{tags:workFilter}"> -->
-            <div ng-include="'/components/work/work-card.template.html'"></div>
+<div id="work">
+    <div class="container" ng-if="false">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="dropdown-wrapper">
+                    <input class="project-typeahead" type="text" ng-model="workFilter" typeahead="project.title for tech in projects | limitTo:8" placeholder="Filter out by technology type or name (ie Angular, Javascript, Frontend)" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="project-list" class="container">
+        <loader ng-show="loading"></loader>
+        <div class="row" ng-class="{'invisible':loading}">     
+            <flip-card template="components/flip-card/flip-card.project.template.html" ng-repeat="project in projects | filter:{tags:workFilter}"></flip-card>
         </div>
     </div>
 </div>

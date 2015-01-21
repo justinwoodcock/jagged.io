@@ -1,5 +1,5 @@
-<div class="card {{project.client|lowercase}} project" ng-class="{'flipped':project.flipped}" ng-mouseover="project.interval=2500" ng-mouseout="project.interval=-1">
-    <div class="card-front">
+<div class="card {{project.client|lowercase}} project" ng-class="{'flipped':flipped,'pulse animated':isHovered}" ng-mouseenter="isHovered=true" ng-mouseleave="isHovered=false;flipped=false">
+    <div class="card-front" ng-class="{'animated flipInY':!flipped}">
         <div class="screenshots carousel">
             <carousel interval="project.interval" disable-ng-animate>
                 <slide ng-if="project.thumbnail">
@@ -17,7 +17,7 @@
                 </span>
             </div>
         </div>
-        <div class="info" ng-click="project.flipped=true">
+        <div class="info" ng-click="flipped=true">
             <h3 class="project-title">{{project.title}}</h3>
             <a class="btn-icon btn-long-shadow btn-link" href="{{project.url}}" target="_blank">
                 <span>
@@ -25,11 +25,11 @@
                 </span>
             </a>
         </div>
-        <button class="card-flip" ng-click="project.flipped=true">
+        <button class="card-flip" ng-click="flipped=true">
             <i class="icon-arrow-curved"></i>
         </button>
     </div>
-    <div class="card-back" ng-click="project.flipped=false" ng-mouseout="project.flipped=false" ng-bind-html="project.description">
-        <!-- <p>{{project.description}}</p> -->
+    <div class="card-back" ng-class="{'animated flipInY':flipped}" ng-mouseout="flipped=false" ng-click="flipped=false">
+        <div class="back-inner" ng-bind-html="project.description"></div>
     </div>
 </div>

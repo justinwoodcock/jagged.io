@@ -19,7 +19,7 @@
     </div>
 </div>
 <div id="curtain" style="margin-top:{{windowHeight}}px;">
-    <div id="tech">
+    <div id="tech" ng-controller="TechController">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -27,12 +27,10 @@
                     <p>Web technology is changing and progressing every day, so is jagged.</p>
                 </div>
             </div>
-            <div id="tech-list" class="cards row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies | orderBy: 'position'">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tech in technologies | filter:{tags:techFilter}"> -->
-                    <div ng-include="'/components/tech/tech-card.template.html'"></div>
-                </div>
+            <div id="tech-list" class="row">
+                <flip-card template="components/flip-card/flip-card.tech.template.html" ng-repeat="tech in technologies | orderBy: 'position'"></flip-card>
             </div>
+            
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <p class="see-more">Wondering what else jagged knows?</p>
@@ -41,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div id="work">
+    <div id="work" ng-controller="WorkController">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -51,10 +49,9 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div id="project-list" class="cards row">
-                        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="project in projects | orderBy: 'position'">
-                            <div ng-include="'/components/work/work-card.template.html'"></div>
-                        </div>
+                    <loader ng-show="loading"></loader>
+                    <div id="project-list" class="cards row" ng-class="{'invisible':loading}">
+                        <flip-card template="components/flip-card/flip-card.project.template.html" ng-repeat="project in projects"></flip-card>
                     </div>
                 </div>
             </div>

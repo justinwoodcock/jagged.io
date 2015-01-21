@@ -7,14 +7,16 @@ jagged.controller('HomeController', ['$scope', '$anchorScroll', '$state', '$time
             //$anchorScroll();
             $state.go(state);
         };
+        
         JaggedFactory.createEntity('tech').then(function(data) {
             $scope.TechEntity = data;
             $scope.technologies = _.where(data.plain(), {'featured':true});
         });
-        JaggedFactory.createEntity('project').then(function(data) {
-            $scope.ProjectEntity = data;
-            $scope.projects = _.where(data.plain(), {'featured':true});
-        });
+        // JaggedFactory.createEntity('project').then(function(data) {
+        //     $scope.ProjectEntity = data;
+        //     $scope.projects = _.where(data.plain(), {'featured':true});
+        // });
+
         $scope.windowHeight = window.innerHeight;
         $scope.scrollLocation = window.pageYOffset;
         var footerHeight = document.getElementById('contact').offsetHeight;

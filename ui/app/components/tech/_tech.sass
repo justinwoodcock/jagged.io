@@ -33,9 +33,17 @@
 
 #tech
     .card
+        width: calc(25% - 30px)
         height: 300px
+        .card-front, .card-back
+            height: 100%
+        .card-front
+            text-align: center
+            padding-top: 40px
+        .tech-title
+            margin-bottom: 28px
+            font-weight: 500
         .btn-link
-            //display: block
             background: $theme-dark
             span
                 left: 1px
@@ -45,6 +53,7 @@
             i
                 font-size: 16px
         .long-shadow
+            margin: auto
             span
                 top: 6px
         &.javascript
@@ -52,3 +61,9 @@
                 font-size: 44px
                 span
                     top: 2px
+        &:hover
+            .card-front, .card-back
+                height: 330px
+                width: 110%
+                left: -15px
+                top: -15px
